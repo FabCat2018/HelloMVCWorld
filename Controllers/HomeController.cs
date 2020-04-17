@@ -6,7 +6,7 @@ namespace HelloMVCWorld.Controllers
 	{
 		public IActionResult Index()
 		{
-			return Content("Hello, MVC World!");
+			return View();
 		}
 	}
 }
