@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using HelloMVCWorld.Models;
+using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace HelloMVCWorld.Controllers
 {
@@ -6,7 +8,12 @@ namespace HelloMVCWorld.Controllers
 	{
 		public IActionResult Index()
 		{
-			return View();
+			Movie movie = new Movie() {
+				Title = "The Godfather",
+				ReleaseDate = new DateTime(1972, 3, 24)
+			};
+
+			return View(movie);
 		}
 	}
 }
