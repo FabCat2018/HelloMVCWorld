@@ -1,0 +1,15 @@
+﻿@using HelloMVCWorld.Models
+@{
+    ViewData["Title"] = "TemplatedDelegate";
+
+    Func<dynamic, object> movieTemplate = @<div>@item.Title [@item.ReleaseDate.ToShortDateString()]</div>;
+
+    List<Movie> movies = new List<Movie>();
+    movies.Add(new Movie() { Title = "The Godfather", ReleaseDate = new DateTime(1972, 3, 24) });
+    movies.Add(new Movie() { Title = "Forrest Gump", ReleaseDate = new DateTime(1994, 7, 6) });
+    movies.Add(new Movie() { Title = "Fight Club", ReleaseDate = new DateTime(1999, 10, 15) });
+}
+
+@foreach(var movie in movies) {
+    @movieTemplate(movie);
+}
