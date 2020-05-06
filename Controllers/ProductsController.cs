@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace HelloMVCWorld.Controllers
 {
+    [Route("/products")]
     public class ProductsController : Controller
     {
         public IActionResult Index()
@@ -18,6 +15,8 @@ namespace HelloMVCWorld.Controllers
             return Content("Product list");
         }
 
+        [Route("{id}")]
+        [Route("/product/{id}")]
         public IActionResult Details(int id)
         {
             return Content("Product details for #" + id);
