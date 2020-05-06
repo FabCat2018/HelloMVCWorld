@@ -26,6 +26,11 @@ namespace HelloMVCWorld
 			app.UseEndpoints(endpoints => {
 				endpoints.MapDefaultControllerRoute();
 			});
+
+			app.UseMvc(routes => {
+				routes.MapRoute("Products", "Products/{action=Index}/{id?}", new { controller = "Products" });
+				routes.MapRoute("Default", "{controller=Home}/{action=Index}");
+			});
 		}
 	}
 }
